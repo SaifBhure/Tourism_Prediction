@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trip Cost Prediction</title>
+  </head>
+  <style>
+    /* Global styles */
+    body {
+      font-family: "Roboto", sans-serif;
+      margin: 100px;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 100px 100px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Form styles */
+    form {
+      display: grid;
+      grid-gap: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 10px; /* Added margin */
+    }
+
+    input[type="text"]:focus,
+    select:focus {
+      outline: none;
+      border-color: #66afe9;
+    }
+
+    select {
+      width: 100%;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 600px) {
+      .container {
+        max-width: 100%;
+        margin: 100px;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <body>
+    <h1>Trip Cost Prediction</h1>
+    <form action="/predict" method="post">
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" required />
+
+      <label for="age_group">Age Group:</label>
+      <input type="text" id="age_group" name="age_group" />
+
+      <label for="purpose">Purpose of Trip:</label>
+      <input type="text" id="purpose" name="purpose" required />
+
+      <label for="main_activity">Main Activity:</label>
+      <input type="text" id="main_activity" name="main_activity" required />
+
+      <label for="info_source">Information Source:</label>
+      <input type="text" id="info_source" name="info_source" required />
+
+      <label for="tour_arrangement">Tour Arrangement:</label>
+      <select id="tour_arrangement" name="tour_arrangement" required>
+        <option value="Independent">Independent</option>
+        <option value="Package Tour">Package</option>
+      </select>
+
+      <label for="package_accomodation">Package Accommodation:</label>
+      <select id="package_accomodation" name="package_accomodation" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="package_food">Package Food:</label>
+      <select id="package_food" name="package_food" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="package_transport_tz">Package Transport:</label>
+      <select id="package_transport_tz" name="package_transport_tz" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="package_insurance">Package Insurance:</label>
+      <select id="package_insurance" name="package_insurance" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="payment_mode">Payment Mode:</label>
+      <select id="payment_mode" name="payment_mode" required>
+        <option value="Cash">Cash</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Debit Card">Debit Card</option>
+        <option value="Others">Others</option>
+      </select>
+
+      <label for="first_trip_tz">First Trip to Tanzania:</label>
+      <select id="first_trip_tz" name="first_trip_tz" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <input type="submit" value="Predict Cost" />
+    </form>
+  </body>
+</html>
